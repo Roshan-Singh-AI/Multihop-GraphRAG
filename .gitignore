@@ -1,0 +1,91 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+share/python-wheels/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Test / coverage / type-check caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Streamlit local secrets
+.streamlit/secrets.toml
+
+# Local generated data / indexes / caches
+data/processed/
+data/generated/
+data/vectorstore/
+data/indexes/
+data/tmp/
+tmp/
+cache/
+
+# Neo4j local volumes / dumps
+neo4j_data/
+neo4j_logs/
+*.dump
+
+# Docker overrides
+docker-compose.override.yml
+
+# Local test/debug files
+test_connection.py
+
+# Uploaded assets / exports
+*.zip
+
+# Keep sample/demo assets tracked
+!assets/
+!data/sample_corpus/
+!data/benchmark/
+
+# Optional: if you generate these locally and do not want them tracked
+# screenshots/
+# exports/

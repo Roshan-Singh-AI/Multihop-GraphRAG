@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graphrag-studio"
+version = "0.1.0"
+description = "Context-aware GraphRAG system with Groq ETL, Neo4j traversal, and a Streamlit demo UI"
+readme = "README.md"
+requires-python = ">=3.10,<3.15"
+license = {text = "MIT"}
+authors = [{name = "Roshan Singh"}]
+dependencies = [
+  "langchain==1.2.15",
+  "langchain-groq==1.1.2",
+  "langchain-huggingface==1.2.1",
+  "langchain-text-splitters==1.1.1",
+  "groq==0.37.1",
+  "neo4j==6.1.0",
+  "streamlit==1.56.0",
+  "fastapi==0.135.3",
+  "uvicorn[standard]==0.44.0",
+  "pydantic==2.12.5",
+  "pydantic-settings==2.13.1",
+  "python-dotenv==1.2.2",
+  "sentence-transformers==5.3.0",
+  "pypdf==6.9.2",
+  "plotly==6.6.0",
+  "pandas==3.0.2",
+  "networkx==3.6.1",
+  "typer==0.24.1",
+  "torchvision",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.0.3",
+  "pytest-cov==7.1.0",
+  "ruff==0.15.9",
+  "mypy==1.20.0",
+]
+
+[project.scripts]
+graphrag-studio = "graphrag_studio.cli:app"
+
+[tool.setuptools]
+packages = ["graphrag_studio"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B008"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+strict = false

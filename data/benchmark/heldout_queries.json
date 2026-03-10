@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "q1",
+    "question": "Which plants are affected if Orion Gateway firmware issue KB-214 impacts cameras used for weld quality?",
+    "expected_doc_ids": ["04-orion-gateway-firmware-notice", "05-weldvision-inspection-guide", "02-atlas-plant-rollout", "03-nova-plant-rollout"],
+    "expected_entities": ["Orion Gateway", "WeldVision Camera", "Atlas Plant", "Nova Plant"]
+  },
+  {
+    "case_id": "q2",
+    "question": "Which team should coordinate with compliance if Atlas Plant pauses WeldVision inspections?",
+    "expected_doc_ids": ["02-atlas-plant-rollout", "07-quality-compliance-standard", "06-edgeops-runbook"],
+    "expected_entities": ["Atlas Plant", "WeldVision Camera", "Quality Systems Team", "Compliance Desk"]
+  },
+  {
+    "case_id": "q3",
+    "question": "How does Mercury Data Lake feed Helios Platform analytics for weld defects?",
+    "expected_doc_ids": ["01-platform-overview", "10-mercury-datalake-integration"],
+    "expected_entities": ["Mercury Data Lake", "Helios Platform"]
+  },
+  {
+    "case_id": "q4",
+    "question": "Who owns the mitigation plan for KB-214?",
+    "expected_doc_ids": ["04-orion-gateway-firmware-notice", "06-edgeops-runbook"],
+    "expected_entities": ["KB-214", "EdgeOps Team"]
+  },
+  {
+    "case_id": "q5",
+    "question": "Which standard covers WeldVision Camera evidence completeness?",
+    "expected_doc_ids": ["07-quality-compliance-standard", "09-incident-postmortem", "05-weldvision-inspection-guide"],
+    "expected_entities": ["WeldVision Camera", "QA-17 Standard"]
+  },
+  {
+    "case_id": "q6",
+    "question": "Which supplier provides the camera hardware used by Atlas Plant and Nova Plant?",
+    "expected_doc_ids": ["05-weldvision-inspection-guide", "08-supplier-map"],
+    "expected_entities": ["Supplier Triton Robotics", "WeldVision Camera"]
+  }
+]
