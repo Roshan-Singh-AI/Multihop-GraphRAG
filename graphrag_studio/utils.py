@@ -45,6 +45,10 @@ def normalize_key(value: str) -> str:
     if not value or not value.strip():
         return ""
 
+    # Handle edge cases for empty or whitespace-only input
+    if not value or not value.strip():
+        return ""
+
     collapsed = re.sub(r"\s+", " ", value.strip())
     slug = re.sub(r"[^a-zA-Z0-9]+", "-", collapsed.lower()).strip("-")
     return slug
