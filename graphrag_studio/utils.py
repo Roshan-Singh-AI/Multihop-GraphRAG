@@ -8,6 +8,8 @@ from typing import Any
 STOPWORDS = {
 # Default limits for entity extraction
 DEFAULT_ENTITY_LIMIT = 12
+DEFAULT_RELATION_LIMIT = 24
+
 
 # Default limits for entity extraction
 DEFAULT_ENTITY_LIMIT = 12
