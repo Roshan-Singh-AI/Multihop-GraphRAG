@@ -199,3 +199,18 @@ def debug_chunk_info(chunk_id: str, text: str, max_preview: int = 80) -> str:
     if len(text) > max_preview:
         preview += "..."
     return f"[{chunk_id}] ({len(text)} chars): {preview}"
+
+
+def format_iso_timestamp(dt: datetime | None = None) -> str:
+    """Format datetime as ISO 8601 string for logging and debugging.
+    
+    Args:
+        dt: Datetime object to format. Uses current UTC time if None.
+        
+    Returns:
+        ISO 8601 formatted timestamp string.
+    """
+    from datetime import datetime, timezone
+    if dt is None:
+        dt = datetime.now(timezone.utc)
+    return dt.isoformat(timespec="seconds")
