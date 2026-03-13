@@ -51,3 +51,9 @@ def test_heuristic_entity_candidates_empty_text() -> None:
     """Test heuristic_entity_candidates handles empty text."""
     entities = heuristic_entity_candidates("")
     assert entities == []
+
+
+
+def test_normalize_key_with_special_characters() -> None:
+    """Test normalize_key handles special characters correctly."""
+    assert normalize_key("Orion-Gateway_v2.0") == "orion-gateway-v2-0"
