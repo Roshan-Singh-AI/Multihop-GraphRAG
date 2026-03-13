@@ -5,6 +5,8 @@ from typing import Iterable
 
 # Type aliases for score maps
 ChunkScoreMap = dict[str, float]
+RankMap = dict[str, int]
+
 
 
 # Type aliases for score maps
