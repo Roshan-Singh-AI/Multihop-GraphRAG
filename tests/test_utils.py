@@ -57,3 +57,9 @@ def test_heuristic_entity_candidates_empty_text() -> None:
 def test_normalize_key_with_special_characters() -> None:
     """Test normalize_key handles special characters correctly."""
     assert normalize_key("Orion-Gateway_v2.0") == "orion-gateway-v2-0"
+
+
+
+def test_normalize_key_whitespace() -> None:
+    """Test normalize_key handles multiple spaces."""
+    assert normalize_key("Atlas   Plant") == "atlas-plant"
