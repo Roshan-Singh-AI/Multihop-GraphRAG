@@ -13,7 +13,16 @@ RRF_K = 60
 
 
 
-def reciprocal_rank(rank: int | None, k: int = RRF_K) -> float:
+def reciprocal_rank(rank: int | None, k: int = RRF_K) -> float:    """Calculate reciprocal rank score using RRF formula.
+    
+    Args:
+        rank: Position in ranked list (1-indexed). None or <= 0 returns 0.
+        k: Smoothing constant for RRF (default: 60).
+        
+    Returns:
+        Reciprocal rank score between 0 and 1.
+    """
+
     if rank is None or rank <= 0:
         return 0.0
     return 1.0 / (k + rank)
