@@ -17,3 +17,10 @@ def test_heuristic_entity_candidates() -> None:
     entities = heuristic_entity_candidates(text)
     assert "Atlas Plant" in entities
     assert "Orion Gateway" in entities
+
+
+
+def test_normalize_key_with_special_characters() -> None:
+    """Test normalize_key handles special characters correctly."""
+    assert normalize_key("Orion-Gateway_v2.0") == "orion-gateway-v2-0"
+    assert normalize_key("Atlas   Plant") == "atlas-plant"
