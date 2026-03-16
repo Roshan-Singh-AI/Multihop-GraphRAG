@@ -6,6 +6,10 @@ from pydantic import BaseModel, Field
 
 # Default confidence thresholds for relation extraction
 MIN_CONFIDENCE_THRESHOLD = 0.5
+
+
+# Default confidence thresholds for relation extraction
+MIN_CONFIDENCE_THRESHOLD = 0.5
 HIGH_CONFIDENCE_THRESHOLD = 0.85
 
 # Common relation types for knowledge graph
