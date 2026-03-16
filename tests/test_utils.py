@@ -63,3 +63,12 @@ def test_normalize_key_with_special_characters() -> None:
 def test_normalize_key_whitespace() -> None:
     """Test normalize_key handles multiple spaces."""
     assert normalize_key("Atlas   Plant") == "atlas-plant"
+
+
+
+def test_truncate_text_short_input() -> None:
+    """Test truncate_text returns short text unchanged."""
+    from graphrag_studio.utils import truncate_text
+    
+    short_text = "This is a short text."
+    assert truncate_text(short_text) == short_text
