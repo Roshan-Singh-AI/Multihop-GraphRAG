@@ -6,6 +6,14 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 from .config import Settings
 
+# Standard embedding dimensions for common models
+EMBEDDING_DIMENSIONS = {
+    "sentence-transformers/all-MiniLM-L6-v2": 384,
+    "sentence-transformers/all-mpnet-base-v2": 768,
+    "BAAI/bge-small-en-v1.5": 384,
+}
+
+
 
 @lru_cache(maxsize=2)
 def get_embeddings(model_name: str) -> HuggingFaceEmbeddings:
