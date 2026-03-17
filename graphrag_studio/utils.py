@@ -214,3 +214,20 @@ def format_iso_timestamp(dt: datetime | None = None) -> str:
     if dt is None:
         dt = datetime.now(timezone.utc)
     return dt.isoformat(timespec="seconds")
+
+
+
+def is_valid_entity_name(name: str, min_length: int = 2) -> bool:
+    """Check if an entity name is valid for graph storage.
+    
+    Args:
+        name: Entity name to validate.
+        min_length: Minimum required length (default: 2).
+        
+    Returns:
+        True if the entity name is valid.
+    """
+    if not name or len(name.strip()) < min_length:
+        return False
+    normalized = normalize_key(name)
+    return len(normalized) >= min_length
