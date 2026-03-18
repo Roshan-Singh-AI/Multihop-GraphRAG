@@ -33,3 +33,23 @@ def chunk_documents(documents: list[LoadedDocument], settings: Settings) -> list
                 )
             )
     return chunks
+
+
+
+def validate_chunk_size(chunk_size: int, overlap: int) -> bool:
+    """Validate chunk size and overlap parameters.
+    
+    Args:
+        chunk_size: Target size for text chunks.
+        overlap: Number of characters to overlap between chunks.
+        
+    Returns:
+        True if parameters are valid, False otherwise.
+    """
+    if chunk_size <= 0:
+        return False
+    if overlap < 0:
+        return False
+    if overlap >= chunk_size:
+        return False
+    return True
