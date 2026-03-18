@@ -5,6 +5,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 from functools import lru_cache
 
 from langchain_huggingface import HuggingFaceEmbeddings
