@@ -45,6 +45,8 @@ def test_sentence_split() -> None:
     assert len(sentences) == 3
     assert sentences[0] == "First sentence."
 
+    assert sentences[0] == "First sentence."
+
 
 
 def test_heuristic_entity_candidates_empty_text() -> None:
