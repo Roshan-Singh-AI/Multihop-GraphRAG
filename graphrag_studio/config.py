@@ -31,6 +31,8 @@ class Settings(BaseSettings):
     groq_max_retries: int = 2
     groq_request_timeout: int = 30  # Timeout in seconds for API requests
 
+    groq_request_timeout: int = 30  # Timeout in seconds for API requests
+
 
     neo4j_uri: str = "bolt://localhost:7687"
     neo4j_username: str = "neo4j"
