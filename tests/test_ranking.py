@@ -37,3 +37,11 @@ def test_reciprocal_rank_edge_cases() -> None:
     assert reciprocal_rank(0) == 0.0
     assert reciprocal_rank(-1) == 0.0
     assert reciprocal_rank(1) > 0.0
+
+
+
+def test_hit_at_k_with_match() -> None:
+    """Test hit_at_k returns True when expected doc is found."""
+    doc_ids = ["doc-1", "doc-2", "doc-3"]
+    expected = {"doc-2", "doc-5"}
+    assert hit_at_k(doc_ids, expected) is True
