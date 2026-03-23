@@ -11,6 +11,10 @@ RankMap = dict[str, int]
 
 RRF_K = 60
 
+# Minimum score threshold for including results
+MIN_RELEVANCE_SCORE = 0.01
+
+
 
 
 def reciprocal_rank(rank: int | None, k: int = RRF_K) -> float:    """Calculate reciprocal rank score using RRF formula.
