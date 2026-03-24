@@ -12,7 +12,10 @@ HIGH_CONFIDENCE_THRESHOLD = 0.85
 RELATION_TYPES = frozenset({
     "PART_OF",
     "LOCATED_IN",
-    "DEPENDS_ON",
+    "DEPENDS_ON",    "RELATED_TO",
+    "CREATED_BY",
+    "USED_BY",
+
 })
 
 
