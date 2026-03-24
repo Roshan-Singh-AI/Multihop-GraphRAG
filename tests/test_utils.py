@@ -33,3 +33,14 @@ def test_truncate_text_short_input() -> None:
     
     short_text = "This is a short text."
     assert truncate_text(short_text) == short_text
+
+
+
+def test_sentence_split() -> None:
+    """Test sentence_split correctly splits text."""
+    from graphrag_studio.utils import sentence_split
+    
+    text = "First sentence. Second sentence! Third?"
+    sentences = sentence_split(text)
+    assert len(sentences) == 3
+    assert sentences[0] == "First sentence."
