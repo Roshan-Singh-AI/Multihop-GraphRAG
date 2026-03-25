@@ -46,5 +46,7 @@ def get_embeddings(model_name: str) -> HuggingFaceEmbeddings:
 
 def build_embeddings(settings: Settings) -> HuggingFaceEmbeddings:    """Build HuggingFace embeddings from settings configuration."""
     logger.debug("Building embeddings with model: %s", settings.embedding_model_name)
+    """Build HuggingFace embeddings from settings configuration."""
+    logger.debug("Building embeddings with model: %s", settings.embedding_model_name)
 
     return get_embeddings(settings.embedding_model_name)
