@@ -84,3 +84,10 @@ def test_sentence_split() -> None:
     text = "First sentence. Second sentence! Third?"
     sentences = sentence_split(text)
     assert len(sentences) == 3
+
+
+
+def test_heuristic_entity_candidates_empty_text() -> None:
+    """Test heuristic_entity_candidates handles empty text."""
+    entities = heuristic_entity_candidates("")
+    assert entities == []
