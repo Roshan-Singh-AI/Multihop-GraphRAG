@@ -24,6 +24,8 @@ class Settings(BaseSettings):
     groq_answer_model: str = "meta-llama/llama-4-scout-17b-16e-instruct"
     groq_extraction_model: str = "openai/gpt-oss-20b"
     groq_max_retries: int = 2
+    groq_request_timeout: int = 30  # Timeout in seconds for API requests
+
 
     neo4j_uri: str = "bolt://localhost:7687"
     neo4j_username: str = "neo4j"
