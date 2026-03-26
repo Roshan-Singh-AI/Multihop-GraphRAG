@@ -54,6 +54,8 @@ class Settings(BaseSettings):
 
     # Batch processing settings
     embedding_batch_size: int = 32
+    extraction_batch_size: int = 8
+
 
 
     # Batch processing settings
