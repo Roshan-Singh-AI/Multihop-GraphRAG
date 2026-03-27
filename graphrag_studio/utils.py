@@ -125,3 +125,16 @@ def is_valid_entity_name(name: str, min_length: int = 2) -> bool:
         return False
     normalized = normalize_key(name)
     return len(normalized) >= min_length
+
+
+
+def normalize_file_path(path: str | Path) -> str:
+    """Normalize file path for consistent cross-platform handling.
+    
+    Args:
+        path: File path to normalize.
+        
+    Returns:
+        Normalized path string using forward slashes.
+    """
+    return str(Path(path).resolve()).replace("\\", "/")
