@@ -20,3 +20,11 @@ def test_fuse_candidate_scores_prefers_multi_signal_chunks() -> None:
         graph_support={"chunk_b": 1.0},
     )
     assert scores["chunk_b"] > scores["chunk_a"]
+
+
+
+def test_hit_at_k_with_match() -> None:
+    """Test hit_at_k returns True when expected doc is found."""
+    doc_ids = ["doc-1", "doc-2", "doc-3"]
+    expected = {"doc-2", "doc-5"}
+    assert hit_at_k(doc_ids, expected) is True
