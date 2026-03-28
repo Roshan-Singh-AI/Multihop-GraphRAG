@@ -22,6 +22,8 @@ MIN_RELEVANCE_SCORE = 0.01
 
 # Score fusion weights (should sum to 1.0)
 VECTOR_WEIGHT = 0.55
+KEYWORD_WEIGHT = 0.15
+
 
 
 
