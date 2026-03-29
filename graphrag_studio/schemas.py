@@ -8,6 +8,17 @@ from pydantic import BaseModel, Field
 MIN_CONFIDENCE_THRESHOLD = 0.5
 HIGH_CONFIDENCE_THRESHOLD = 0.85
 
+# Common relation types for knowledge graph
+RELATION_TYPES = frozenset({
+    "PART_OF",
+    "LOCATED_IN",
+    "DEPENDS_ON",
+    "RELATED_TO",
+    "CREATED_BY",
+    "USED_BY",
+})
+
+
 
 
 class ExtractedEntity(BaseModel):
