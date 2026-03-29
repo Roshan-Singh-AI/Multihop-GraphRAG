@@ -51,3 +51,9 @@ def test_hit_at_k_with_match() -> None:
 def test_reciprocal_rank_none() -> None:
     """Test reciprocal_rank returns 0 for None."""
     assert reciprocal_rank(None) == 0.0
+
+
+
+def test_reciprocal_rank_zero() -> None:
+    """Test reciprocal_rank returns 0 for zero rank."""
+    assert reciprocal_rank(0) == 0.0
