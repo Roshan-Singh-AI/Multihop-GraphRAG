@@ -45,3 +45,9 @@ def test_hit_at_k_with_match() -> None:
     doc_ids = ["doc-1", "doc-2", "doc-3"]
     expected = {"doc-2", "doc-5"}
     assert hit_at_k(doc_ids, expected) is True
+
+
+
+def test_reciprocal_rank_none() -> None:
+    """Test reciprocal_rank returns 0 for None."""
+    assert reciprocal_rank(None) == 0.0
