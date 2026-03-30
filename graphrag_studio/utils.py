@@ -138,3 +138,20 @@ def normalize_file_path(path: str | Path) -> str:
         Normalized path string using forward slashes.
     """
     return str(Path(path).resolve()).replace("\\", "/")
+
+
+
+def safe_divide(numerator: float, denominator: float, default: float = 0.0) -> float:
+    """Safely divide two numbers, returning default on zero division.
+    
+    Args:
+        numerator: The dividend.
+        denominator: The divisor.
+        default: Value to return if denominator is zero.
+        
+    Returns:
+        Result of division or default value.
+    """
+    if denominator == 0:
+        return default
+    return numerator / denominator
