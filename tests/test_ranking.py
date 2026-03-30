@@ -57,3 +57,9 @@ def test_reciprocal_rank_none() -> None:
 def test_reciprocal_rank_zero() -> None:
     """Test reciprocal_rank returns 0 for zero rank."""
     assert reciprocal_rank(0) == 0.0
+
+
+
+def test_reciprocal_rank_negative() -> None:
+    """Test reciprocal_rank returns 0 for negative rank."""
+    assert reciprocal_rank(-1) == 0.0
