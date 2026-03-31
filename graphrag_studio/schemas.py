@@ -160,3 +160,11 @@ class ExtractionMetrics(BaseModel):
     relation_count: int = 0
     token_count: int = 0
     retry_count: int = 0
+
+
+
+class ExtractionMetrics(BaseModel):
+    """Metrics collected during entity/relation extraction."""
+    
+    processing_time_ms: float = 0.0
+    entity_count: int = 0
