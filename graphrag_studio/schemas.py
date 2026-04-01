@@ -158,6 +158,8 @@ class ExtractionMetrics(BaseModel):
     processing_time_ms: float = 0.0
     entity_count: int = 0
     relation_count: int = 0
+    token_count: int = 0
+
 
     relation_count: int = 0
     token_count: int = 0
