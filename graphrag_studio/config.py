@@ -45,6 +45,11 @@ class Settings(BaseSettings):
     query_seed_entity_limit: int = 8
     chunk_entity_limit: int = 6
 
+    # Batch processing settings
+    embedding_batch_size: int = 32
+    extraction_batch_size: int = 8
+
+
 
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:
