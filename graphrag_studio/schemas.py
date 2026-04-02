@@ -159,6 +159,8 @@ class ExtractionMetrics(BaseModel):
     entity_count: int = 0
     relation_count: int = 0
     token_count: int = 0
+    retry_count: int = 0
+
 
 
     relation_count: int = 0
