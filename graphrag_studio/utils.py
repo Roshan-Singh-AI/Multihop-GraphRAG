@@ -278,3 +278,21 @@ def format_result_count(count: int, singular: str, plural: str | None = None) ->
     if plural is None:
         plural = f"{singular}s"
     return f"{count} {singular if count == 1 else plural}"
+
+
+
+def debug_chunk_info(chunk_id: str, text: str, max_preview: int = 80) -> str:
+    """Generate a debug string for chunk inspection.
+    
+    Args:
+        chunk_id: The chunk identifier.
+        text: The chunk text content.
+        max_preview: Maximum characters to include in preview.
+        
+    Returns:
+        Debug string with chunk ID, length, and text preview.
+    """
+    preview = text[:max_preview].replace("\n", " ")
+    if len(text) > max_preview:
+        preview += "..."
+    return f"[{chunk_id}] ({len(text)} chars): {preview}"
