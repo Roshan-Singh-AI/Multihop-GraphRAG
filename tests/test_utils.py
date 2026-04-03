@@ -91,3 +91,12 @@ def test_heuristic_entity_candidates_empty_text() -> None:
     """Test heuristic_entity_candidates handles empty text."""
     entities = heuristic_entity_candidates("")
     assert entities == []
+
+
+
+def test_safe_json_loads_valid() -> None:
+    """Test safe_json_loads with valid JSON."""
+    from graphrag_studio.utils import safe_json_loads
+    
+    result = safe_json_loads('{"key": "value"}')
+    assert result == {"key": "value"}
