@@ -155,3 +155,20 @@ def safe_divide(numerator: float, denominator: float, default: float = 0.0) -> f
     if denominator == 0:
         return default
     return numerator / denominator
+
+
+
+def format_result_count(count: int, singular: str, plural: str | None = None) -> str:
+    """Format a result count with proper singular/plural form.
+    
+    Args:
+        count: The number of items.
+        singular: Singular form of the noun.
+        plural: Plural form (default: singular + 's').
+        
+    Returns:
+        Formatted string like "1 entity" or "5 entities".
+    """
+    if plural is None:
+        plural = f"{singular}s"
+    return f"{count} {singular if count == 1 else plural}"
