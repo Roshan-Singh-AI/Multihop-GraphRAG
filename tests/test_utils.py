@@ -100,3 +100,12 @@ def test_safe_json_loads_valid() -> None:
     
     result = safe_json_loads('{"key": "value"}')
     assert result == {"key": "value"}
+
+
+
+def test_safe_json_loads_invalid() -> None:
+    """Test safe_json_loads returns None for invalid JSON."""
+    from graphrag_studio.utils import safe_json_loads
+    
+    result = safe_json_loads("not valid json")
+    assert result is None
