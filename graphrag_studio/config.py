@@ -58,6 +58,8 @@ class Settings(BaseSettings):
 
     # Cache settings
     embedding_cache_size: int = 1000
+    query_cache_size: int = 100
+
 
 
 
