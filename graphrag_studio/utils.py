@@ -296,3 +296,18 @@ def debug_chunk_info(chunk_id: str, text: str, max_preview: int = 80) -> str:
     if len(text) > max_preview:
         preview += "..."
     return f"[{chunk_id}] ({len(text)} chars): {preview}"
+
+
+
+def clamp(value: float, min_val: float, max_val: float) -> float:
+    """Clamp a value between min and max bounds.
+    
+    Args:
+        value: The value to clamp.
+        min_val: Minimum allowed value.
+        max_val: Maximum allowed value.
+        
+    Returns:
+        Clamped value within bounds.
+    """
+    return max(min_val, min(value, max_val))
