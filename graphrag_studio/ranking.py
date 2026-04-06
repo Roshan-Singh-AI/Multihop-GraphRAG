@@ -82,7 +82,12 @@ def hit_at_k(doc_ids: Iterable[str], expected_doc_ids: set[str]) -> bool:
 
 
 
-def fuse_candidate_scores(
+def fuse_candidate_scores(    """Fuse multiple ranking signals using Reciprocal Rank Fusion.
+    
+    Combines vector similarity, keyword matching, graph connectivity,
+    and support scores into a single relevance score.
+    """
+
     vector_ranks: dict[str, int],
     keyword_ranks: dict[str, int],
     graph_ranks: dict[str, int],
