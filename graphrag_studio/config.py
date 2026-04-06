@@ -60,6 +60,10 @@ class Settings(BaseSettings):
     embedding_cache_size: int = 1000
     query_cache_size: int = 100
 
+    # Graph search limits
+    max_graph_results: int = 50
+
+
 
 
 
