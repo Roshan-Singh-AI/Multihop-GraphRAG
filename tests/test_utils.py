@@ -109,3 +109,11 @@ def test_safe_json_loads_invalid() -> None:
     
     result = safe_json_loads("not valid json")
     assert result is None
+
+
+
+def test_display_path() -> None:
+    """Test display_path converts backslashes."""
+    from graphrag_studio.utils import display_path
+    
+    assert display_path("path\to\file") == "path/to/file"
