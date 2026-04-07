@@ -117,3 +117,10 @@ def test_display_path() -> None:
     from graphrag_studio.utils import display_path
     
     assert display_path("path\to\file") == "path/to/file"
+
+
+
+def test_chunk_ref_zero_padding() -> None:
+    """Test chunk_ref produces zero-padded index."""
+    assert chunk_ref("doc", 1) == "doc::chunk_001"
+    assert chunk_ref("doc", 99) == "doc::chunk_099"
