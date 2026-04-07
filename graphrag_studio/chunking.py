@@ -1,5 +1,10 @@
 from __future__ import annotations
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
