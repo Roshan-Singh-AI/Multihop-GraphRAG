@@ -16,3 +16,7 @@ def __getattr__(name: str):
 
         return GraphRAGService
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
+
+# Package version
+__version__ = "0.2.0"
+__author__ = "GraphRAG Studio Team"
