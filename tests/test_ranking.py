@@ -69,3 +69,11 @@ def test_reciprocal_rank_negative() -> None:
 def test_reciprocal_rank_positive() -> None:
     """Test reciprocal_rank returns positive score for valid rank."""
     assert reciprocal_rank(1) > 0.0
+
+
+
+def test_hit_at_k_no_match() -> None:
+    """Test hit_at_k returns False when no expected doc is found."""
+    doc_ids = ["doc-1", "doc-2", "doc-3"]
+    expected = {"doc-7", "doc-8"}
+    assert hit_at_k(doc_ids, expected) is False
