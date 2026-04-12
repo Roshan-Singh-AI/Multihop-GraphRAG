@@ -2,7 +2,7 @@ langchain==1.2.15
 langchain-groq==1.1.2
 langchain-huggingface==1.2.1
 langchain-text-splitters==1.1.1
-groq==1.1.2
+groq==0.37.1
 neo4j==6.1.0
 streamlit==1.56.0
 fastapi==0.135.3

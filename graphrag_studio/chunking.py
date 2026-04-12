@@ -14,15 +14,7 @@ from .utils import chunk_ref
 
 
 
-def chunk_documents(documents: list[LoadedDocument], settings: Settings) -> list[Document]:    """Split documents into smaller chunks for embedding and retrieval.
-    
-    Args:
-        documents: List of loaded documents to chunk.
-        settings: Application settings containing chunk size and overlap.
-        
-    Returns:
-        List of Document objects with chunk metadata.
-    """
+def chunk_documents(documents: list[LoadedDocument], settings: Settings) -> list[Document]:
     """Split documents into smaller chunks for embedding and retrieval.
     
     Args:
@@ -32,7 +24,6 @@ def chunk_documents(documents: list[LoadedDocument], settings: Settings) -> list
     Returns:
         List of Document objects with chunk metadata.
     """
-
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=settings.chunk_size,
         chunk_overlap=settings.chunk_overlap,

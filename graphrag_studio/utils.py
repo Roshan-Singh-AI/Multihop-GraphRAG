@@ -2,19 +2,15 @@ from __future__ import annotations
 
 import json
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+# Default limits for entity extraction
+DEFAULT_ENTITY_LIMIT = 12
+DEFAULT_RELATION_LIMIT = 24
+
 STOPWORDS = {
-# Default limits for entity extraction
-DEFAULT_ENTITY_LIMIT = 12
-DEFAULT_RELATION_LIMIT = 24
-
-
-# Default limits for entity extraction
-DEFAULT_ENTITY_LIMIT = 12
-DEFAULT_RELATION_LIMIT = 24
-
     "a",
     "an",
     "and",
@@ -41,11 +37,6 @@ DEFAULT_RELATION_LIMIT = 24
 
 def normalize_key(value: str) -> str:
     """Create a graph-safe normalized key."""
-    # Handle edge cases for empty or whitespace-only input
-    if not value or not value.strip():
-        return ""
-
-    # Handle edge cases for empty or whitespace-only input
     if not value or not value.strip():
         return ""
 
@@ -105,209 +96,47 @@ def safe_json_loads(value: str) -> Any:
 
 
 def format_iso_timestamp(dt: datetime | None = None) -> str:
-    """Format datetime as ISO 8601 string for logging and debugging.
-    
-    Args:
-        dt: Datetime object to format. Uses current UTC time if None.
-        
-    Returns:
-        ISO 8601 formatted timestamp string.
-    """
-    from datetime import datetime, timezone
+    """Format datetime as ISO 8601 string for logging and debugging."""
     if dt is None:
         dt = datetime.now(timezone.utc)
     return dt.isoformat(timespec="seconds")
 
 
-
 def is_valid_entity_name(name: str, min_length: int = 2) -> bool:
-    """Check if an entity name is valid for graph storage.
-    
-    Args:
-        name: Entity name to validate.
-        min_length: Minimum required length (default: 2).
-        
-    Returns:
-        True if the entity name is valid.
-    """
+    """Check if an entity name is valid for graph storage."""
     if not name or len(name.strip()) < min_length:
         return False
     normalized = normalize_key(name)
     return len(normalized) >= min_length
 
 
-
 def normalize_file_path(path: str | Path) -> str:
-    """Normalize file path for consistent cross-platform handling.
-    
-    Args:
-        path: File path to normalize.
-        
-    Returns:
-        Normalized path string using forward slashes.
-    """
+    """Normalize file path for consistent cross-platform handling."""
     return str(Path(path).resolve()).replace("\\", "/")
 
 
-
 def safe_divide(numerator: float, denominator: float, default: float = 0.0) -> float:
-    """Safely divide two numbers, returning default on zero division.
-    
-    Args:
-        numerator: The dividend.
-        denominator: The divisor.
-        default: Value to return if denominator is zero.
-        
-    Returns:
-        Result of division or default value.
-    """
+    """Safely divide two numbers, returning default on zero division."""
     if denominator == 0:
         return default
     return numerator / denominator
 
 
-
 def format_result_count(count: int, singular: str, plural: str | None = None) -> str:
-    """Format a result count with proper singular/plural form.
-    
-    Args:
-        count: The number of items.
-        singular: Singular form of the noun.
-        plural: Plural form (default: singular + 's').
-        
-    Returns:
-        Formatted string like "1 entity" or "5 entities".
-    """
+    """Format a result count with proper singular/plural form."""
     if plural is None:
         plural = f"{singular}s"
     return f"{count} {singular if count == 1 else plural}"
 
 
-
 def debug_chunk_info(chunk_id: str, text: str, max_preview: int = 80) -> str:
-    """Generate a debug string for chunk inspection.
-    
-    Args:
-        chunk_id: The chunk identifier.
-        text: The chunk text content.
-        max_preview: Maximum characters to include in preview.
-        
-    Returns:
-        Debug string with chunk ID, length, and text preview.
-    """
+    """Generate a debug string for chunk inspection."""
     preview = text[:max_preview].replace("\n", " ")
     if len(text) > max_preview:
         preview += "..."
     return f"[{chunk_id}] ({len(text)} chars): {preview}"
-
-
-def format_iso_timestamp(dt: datetime | None = None) -> str:
-    """Format datetime as ISO 8601 string for logging and debugging.
-    
-    Args:
-        dt: Datetime object to format. Uses current UTC time if None.
-        
-    Returns:
-        ISO 8601 formatted timestamp string.
-    """
-    from datetime import datetime, timezone
-    if dt is None:
-        dt = datetime.now(timezone.utc)
-    return dt.isoformat(timespec="seconds")
-
-
-
-def is_valid_entity_name(name: str, min_length: int = 2) -> bool:
-    """Check if an entity name is valid for graph storage.
-    
-    Args:
-        name: Entity name to validate.
-        min_length: Minimum required length (default: 2).
-        
-    Returns:
-        True if the entity name is valid.
-    """
-    if not name or len(name.strip()) < min_length:
-        return False
-    normalized = normalize_key(name)
-    return len(normalized) >= min_length
-
-
-
-def normalize_file_path(path: str | Path) -> str:
-    """Normalize file path for consistent cross-platform handling.
-    
-    Args:
-        path: File path to normalize.
-        
-    Returns:
-        Normalized path string using forward slashes.
-    """
-    return str(Path(path).resolve()).replace("\\", "/")
-
-
-
-def safe_divide(numerator: float, denominator: float, default: float = 0.0) -> float:
-    """Safely divide two numbers, returning default on zero division.
-    
-    Args:
-        numerator: The dividend.
-        denominator: The divisor.
-        default: Value to return if denominator is zero.
-        
-    Returns:
-        Result of division or default value.
-    """
-    if denominator == 0:
-        return default
-    return numerator / denominator
-
-
-
-def format_result_count(count: int, singular: str, plural: str | None = None) -> str:
-    """Format a result count with proper singular/plural form.
-    
-    Args:
-        count: The number of items.
-        singular: Singular form of the noun.
-        plural: Plural form (default: singular + 's').
-        
-    Returns:
-        Formatted string like "1 entity" or "5 entities".
-    """
-    if plural is None:
-        plural = f"{singular}s"
-    return f"{count} {singular if count == 1 else plural}"
-
-
-
-def debug_chunk_info(chunk_id: str, text: str, max_preview: int = 80) -> str:
-    """Generate a debug string for chunk inspection.
-    
-    Args:
-        chunk_id: The chunk identifier.
-        text: The chunk text content.
-        max_preview: Maximum characters to include in preview.
-        
-    Returns:
-        Debug string with chunk ID, length, and text preview.
-    """
-    preview = text[:max_preview].replace("\n", " ")
-    if len(text) > max_preview:
-        preview += "..."
-    return f"[{chunk_id}] ({len(text)} chars): {preview}"
-
 
 
 def clamp(value: float, min_val: float, max_val: float) -> float:
-    """Clamp a value between min and max bounds.
-    
-    Args:
-        value: The value to clamp.
-        min_val: Minimum allowed value.
-        max_val: Maximum allowed value.
-        
-    Returns:
-        Clamped value within bounds.
-    """
+    """Clamp a value between min and max bounds."""
     return max(min_val, min(value, max_val))
