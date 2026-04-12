@@ -1,10 +1,30 @@
 # GraphRAG Studio
 
 <p align="center">
-  <img src="assets/logo.svg" alt="GraphRAG Studio logo" width="760" />
+  <a href="https://multihop-graphrag-9krfknzgd6hpwen3pqgsim.streamlit.app/" target="_blank">
+    <img src="assets/logo.svg" alt="GraphRAG Studio logo" width="760" />
+  </a>
 </p>
+<p align="center">
+  <a href="https://multihop-graphrag-9krfknzgd6hpwen3pqgsim.streamlit.app/">
+    <img src="https://img.shields.io/badge/🔴_Live_Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Demo" />
+  </a>
+</p>
+<p align="center">
+<i>👆 Click the Live Demo badge above to try the interactive tool directly in your browser.</i></p>
+
+---
+
+<h3 align="center">Context-Aware Knowledge Graph RAG (GraphRAG)</h3>
+<p align="center"><b>Experience hybrid retrieval and multi-hop reasoning in action. No installation required.</b></p>
 
 **GraphRAG Studio** is a portfolio-ready implementation of **Context-Aware Knowledge Graph RAG (GraphRAG)** built to showcase hybrid retrieval, multi-hop reasoning, and LLM-driven graph ETL.
+
+## 🎬 Live Demo Preview
+
+<p align="center">
+  <img src="assets/demo.jpeg" alt="GraphRAG Studio - Ask Tab Demo Screenshot" width="800" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+</p>
 
 It is designed for exactly the kind of project you would want to put on GitHub after writing a resume bullet like this:
 
