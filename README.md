@@ -39,16 +39,6 @@ The repo ships with:
 - a **benchmark harness** that compares hybrid retrieval vs vector-only retrieval
 - docs for architecture, deployment, demo flow, and showcase positioning
 
-## Why this project is good for a GitHub portfolio
-
-It highlights the parts that look strongest to hiring managers and reviewers:
-
-- **Hybrid retrieval** instead of a plain vector-only chatbot
-- **Graph traversal for multi-hop reasoning** instead of shallow semantic search
-- **LLM-driven ETL** with structured outputs instead of manual graph curation
-- **Evaluation discipline** with a vector-only baseline and held-out benchmark
-- **Demo UX** with a graph explorer and retrieval inspector, not just a notebook
-
 ## Core idea
 
 1. Ingest documents.
@@ -199,24 +189,7 @@ To adapt it for your real GraphRAG work:
 
 That way the repo stays honest while still looking strong in public.
 
-## What to screenshot for GitHub
-
-The easiest way to make the repo look impressive fast:
-
-1. Ask tab showing a multi-hop answer with chunk citations
-2. Graph Explorer showing the entity neighborhood for a system like `Orion Gateway`
-3. Benchmark tab showing hybrid retrieval outperforming vector-only retrieval
-4. Retrieval Inspector showing fused scores per chunk
-
 There is a dedicated positioning note in [`docs/showcase-notes.md`](docs/showcase-notes.md).
-
-## Suggested GitHub repo description
-
-> Context-aware GraphRAG system with Groq-powered knowledge graph ETL, Neo4j multi-hop retrieval, and a Streamlit demo UI.
-
-## Suggested GitHub topics
-
-`graphrag`, `rag`, `knowledge-graph`, `neo4j`, `langchain`, `groq`, `streamlit`, `retrieval`, `llm`, `vector-search`, `evaluation`
 
 ## Commands
 
@@ -228,17 +201,6 @@ make run-api
 make benchmark
 make test
 ```
-
-## Notes on honesty and positioning
-
-This repo is intentionally built so you can:
-
-- showcase the **architecture pattern** publicly
-- demo the **retrieval trace** live
-- keep your **real production corpus private**
-- swap in your actual benchmark later to reflect your real project metrics
-
-That usually lands much better than publishing a vague toy chatbot or inventing unverifiable numbers.
 
 ## License
 
